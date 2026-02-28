@@ -24,7 +24,7 @@ public class Producto {
     private List<Foto> fotos = new ArrayList<>();
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL,
-            orphanRemoval = true, fetch = FetchType.EAGER)
+            orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Comentario> comentarios = new ArrayList<>();
 
 

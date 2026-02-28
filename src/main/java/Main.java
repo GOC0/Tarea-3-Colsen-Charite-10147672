@@ -322,6 +322,11 @@ public class Main {
             Producto p = prodD.buscarPorNombre(nombre);
             User u = userD.buscarPorNombre(user);
 
+            if (p == null) {
+                ctx.status(404).result("Producto no encontrado");
+                return;
+            }
+
             Map<String, Object> model = new HashMap<>();
             model.put("producto", p);
             model.put("comentarios", comentarioD.listarPorProducto(p));

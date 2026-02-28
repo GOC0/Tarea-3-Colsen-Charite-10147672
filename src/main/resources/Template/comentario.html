@@ -46,7 +46,8 @@
         </div>
         <p class="mensaje" th:text="${c.mensaje}"></p>
 
-        <form th:if="${isAdmin}" th:action="@{/eliminarComentario}" method="post">
+
+        <form th:if="${isAdmin == true}" th:action="@{/eliminarComentario}" method="post">
             <input type="hidden" name="comentarioId" th:value="${c.id}"/>
             <input type="hidden" name="productoNombre" th:value="${producto.name}"/>
             <button type="submit" class="btn-eliminar">Eliminar</button>
